@@ -1,26 +1,19 @@
-menu = int(input("   ORDER PLEASE \n 1.pasta \n 2. pizza \n 3. sandwitch \n \n Select Yours"))
-if menu == 1 :
-    print("\n pasta $10 ")
+from collections import defaultdict
 
-    confirm = int(input("\n confirm to press one"))
-    if confirm ==1:
-        print("\n Order confirmed")
-    else:
-        print("chose correct option")
-elif menu == 2:
-    print("\n with hotsause $15")
-    confm = int(input("\nconfirm to press.one"))
+welcome_screen_message = """"""
 
-    if confm == 1:
-        print("\n Order confirmed")
-    else:
-        print("chose correct option")
-elif menu == 3:
-    print("\n with extra cheese $20")
-    confirm = int(input("\n confirm to press one"))
-    if confirm == 1:
-        print("\n Order confirmed")
-    else:
-        print("chose correct option")
-else:
-    print("\n WRONG SELECTION")
+def get_user_information():
+    customer = defaultdict(dict)
+
+    customer['name']['first_name'] = input('Enter First Name: ')
+    customer['name']['last_name'] = input('Enter Last Name: ')
+    customer['delivery_address']['street_number'] = input('Enter Street Number:')
+    customer['delivery_address']['street_name'] = input('Enter Street name: ')
+    customer['delivery_address']['unit'] = input('Enter unit number: ') or ''
+    customer['address']['city'] = input('Enter City name: ')
+    customer['address']['province'] = input('Enter province: ')
+    customer['address']['postal_code'] = input('Enter postal code: ')
+    customer['special_instructions'] = input('Enter instructions: ')
+    customer['phone_number'] = input('Enter phone number: ')
+
+    return customer
